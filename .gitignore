@@ -1,0 +1,13 @@
+# Virtual environment — never push this
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables (passwords go here later)
+.env
+
+# OS junk files
+Thumbs.db
