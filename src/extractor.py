@@ -44,9 +44,20 @@ def extract_weather(city: dict) -> dict:
 
 
 if __name__ == "__main__":
+    import json
+    import os
+
+    os.makedirs("data/raw", exist_ok=True)
+
     for city in CITIES:
         raw = extract_weather(city)
         print(f"  First date:  {raw['daily']['time'][0]}")
         print(f"  Last date:   {raw['daily']['time'][-1]}")
         print(f"  Sample temp: {raw['daily']['temperature_2m_max'][0]}°C")
         print()
+
+        # save raw JSON exactly as received
+        filename = f"data/raw/{city['name'].lower()}_raw.json"
+        with open(filename, "w") as f:
+            json.dump(raw, f, indent=2)
+        print(f"  Saved raw data to {filename}")
