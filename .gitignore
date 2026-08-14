@@ -11,3 +11,6 @@ __pycache__/
 
 # OS junk files
 Thumbs.db
+
+# Airflow logs
+logs/

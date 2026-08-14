@@ -3,7 +3,7 @@ from psycopg2.extras import execute_values
 import pandas as pd
 
 DB_CONFIG = {
-    "host":     "localhost",
+    "host":     "host.docker.internal",
     "database": "weather_pipeline",
     "user":     "postgres",
     "password": "postgres123",
